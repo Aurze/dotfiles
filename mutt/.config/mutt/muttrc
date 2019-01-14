@@ -1,0 +1,87 @@
+source $HOME/.config/mutt/config/colors.mutt
+source $HOME/.config/mutt/config/bindings.mutt
+
+source ~/.config/mutt/accounts/arsenault.nic
+set move = no
+set imap_keepalive = 60
+
+set mbox_type=maildir
+
+auto_view text/x-vcard text/html text/enriched
+
+set folder = ~/.mail
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+
+
+ # Prettify
+color hdrdefault white black  # headers white on black
+color header brightgreen black ^From:  # sender's name in green
+color quoted cyan black  # quoted text in blue
+color signature red black   # signature in red
+
+
+# Should the Sidebar be shown?
+set sidebar_visible = yes
+
+# How wide should the Sidebar be in screen columns?
+# Note: Some characters, e.g. Chinese, take up two columns each.
+set sidebar_width = 20
+
+# Should the mailbox paths be abbreviated?
+set sidebar_short_path = yes
+
+# When abbreviating mailbox path names, use any of these characters as path
+# separators.  Only the part after the last separators will be shown.
+# For file folders '/' is good.  For IMAP folders, often '.' is useful.
+set sidebar_delim_chars = '/.'
+
+# If the mailbox path is abbreviated, should it be indented?
+set sidebar_folder_indent = yes
+
+# Indent mailbox paths with this string.
+set sidebar_indent_string = '  '
+
+set pager_index_lines=10
+
+# Make the Sidebar only display mailboxes that contain new, or flagged,
+# mail.
+set sidebar_new_mail_only = no
+# Display the Sidebar mailboxes using this format string.
+set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats = yes
+set mail_check_stats_interval = 1
+
+set sleep_time = 0
+
+set date_format="%y-%m-%d %T"
+#set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
+
+# keep connection open
+set imap_idle=yes
+
+# support threads
+set sort="threads"
+set strict_threads="yes"
+
+# But you want threads which have new mails appear at the top/bottom
+set sort_browser="reverse-date"
+set sort_aux="last-date-received"
+
+
+# And finally the account config for multiple accounts
+#############################################################
+
+# by default, use mailbox
+set realname = "Nicolas Arsenault"
+set spoolfile = "+INBOX"
+source ~/.config/mutt/accounts/arsenault.nic
+
+# Mailboxes to show in the sidebar.
+mailboxes =arsenault.nic
+mailboxes =arsenault.nic/INBOX =arsenault.nic/All =arsenault.nic/Sent =arsenault.nic/Drafts =arsenault.nic/Junk =arsenault.nic/Trash
+mailboxes =n_022
+mailboxes =n_022/INBOX =n_022/Archive =n_022/Sent =n_022/Drafts =n_022/Junk =n_022/Trash
+
+folder-hook arsenault.nic/* source ~/.config/mutt/accounts/arsenault.nic
+folder-hook n_022/* source ~/.config/mutt/accounts/n_022

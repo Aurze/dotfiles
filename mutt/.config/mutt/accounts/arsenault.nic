@@ -1,0 +1,18 @@
+# vim: ft=muttrc
+set timeout=360  #Check for mail every minute
+set mail_check=360
+set smtp_authenticators="login"
+set ssl_use_sslv3=yes
+set smtp_url="smtp://patate@smtp.gmail.com:587/"
+set smtp_pass="patate"
+set from="arsenault.nic@gmail.com"
+set realname="Nicolas Arsenault"
+
+
+# Set folders
+set folder = "~/.mail/"
+set spoolfile = "+INBOX"
+set mbox = "+archive"
+set postponed = "+drafts"
+set record = "+Sent"
+set trash = "+Trash"

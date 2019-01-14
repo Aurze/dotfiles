@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# This script is mostly taken from an example on the GNU.org website
+# https://www.gnu.org/software/parallel/man.html#EXAMPLE:-Parallel-grep
+
+find . -type f | parallel -k -j150% -n 1000 -m grep -H -n $1

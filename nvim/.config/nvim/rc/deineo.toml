@@ -1,0 +1,9 @@
+# [[plugins]]
+# repo = 'tweekmonster/deoplete-clang2'
+# on_ft = ['c', 'cpp']
+# hook_source = '''
+#   autocmd FileType c,cpp let b:clang2_orig_maps = {}
+# '''
+
+[[plugins]]
+repo = 'Shougo/deoppet.nvim'

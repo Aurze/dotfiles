@@ -1,0 +1,14 @@
+{
+	"groups": {
+		"workspace":               {"fg": "white",      "bg": "black",  "attrs": []},
+		"w_visible":               {"fg": "white",      "bg": "black",  "attrs": []},
+		"w_focused":               {"fg": "black",      "bg": "mediumcyan",   "attrs": []},
+		"w_urgent":                {"fg": "black",      "bg": "yellow", "attrs": []},
+		"scratchpad":              {"fg": "white",      "bg": "black",  "attrs": []},
+		"scratchpad:visible":      {"fg": "mediumcyan",       "bg": "black",  "attrs": []},
+		"scratchpad:focused":      {"fg": "black",      "bg": "mediumcyan",   "attrs": []},
+		"scratchpad:urgent":       {"fg": "black",      "bg": "yellow", "attrs": []},
+		"mode":                    {"fg": "black",      "bg": "yellow", "attrs": []}
+	}
+}
+

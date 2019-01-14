@@ -1,0 +1,113 @@
+!xTerm*FaceName: Noto
+!xTerm*FaceSize: 9
+
+! ! ------------------------------------------------------------------------------
+! ! --- generated with 4bit Terminal Color Scheme Designer -----------------------
+! ! ------------------------------------------------------------------------------
+! ! --- http://ciembor.github.com/4bit -------------------------------------------
+! ! ------------------------------------------------------------------------------
+!
+! ! --- special colors ---
+!
+*background: #222222
+*foreground: #e6e3c6
+!
+! --- standard colors ---
+!
+
+
+! black
+*color0: #151515
+!
+! bright_black
+*color8: #3e3c3a
+!
+! red
+*color1: #cc3333
+!
+! bright_red
+*color9: #cc6666
+!
+! green
+*color2: #81ac2b
+!
+! bright_green
+*color10: #9dce3b
+!
+! yellow
+*color3: #cccc33
+!
+! bright_yellow
+*color11: #ffcf6f
+!
+! blue
+*color4: #333399
+!
+! bright_blue
+*color12: #669999
+!
+! magenta
+*color5: #663399
+!
+! bright_magenta
+*color13: #666699
+!
+! cyan
+*color6: #66cc99
+!
+! bright_cyan
+*color14: #99ffcc
+!
+! white
+*color7: #e6e3c6
+!
+! bright_white
+*color15: #EEEEEC
+!
+!
+! ! ------------------------------------------------------------------------------
+! ! --- end of terminal colors section -------------------------------------------
+! ! ------------------------------------------------------------------------------
+!
+!
+
+! utils
+URxvt.perl-lib: /usr/lib/urxvt/perl/
+!URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: firefox
+URxvt.matcher.button: 1
+URxvt*colorUL: yellow
+URxvt*colorIT: #87af5f
+URxvt*colorBD: #d7d7d7
+URxvt.perl-ext-common: selection-to-clipboard
+! URxvt*saveLines: 0
+
+! keymap
+URxvt*keysym.Home: \033[1~
+URxvt*keysym.End: \033[4~
+
+! Appearence
+URxvt*visualBell: false
+
+!
+! fonts
+!
+! xft fonts
+URxvt*font: xft:DejaVu Sans Mono Nerd Font:bold:pixelsize=11, xft:Inconsolata\ for\ Powerline:pixelsize=11
+!URxvt*boldFont: xft:DejaVu Sans Mono Nerd Font:bold:pixelsize=11
+!URxvt*font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:pixelsize=11,xft:Inconsolata\ for\ Powerline:pixelsize=11
+!
+! scrollbar
+!
+! enable scrollbar
+URxvt*scrollBar: false     
+! scrollbar width
+URxvt*thickness: 5 
+! scrollbar color
+URxvt*scrollColor: #1793D1
+! scrollbar without a trough
+URxvt*scrollBar_floating: true
+! scrollbar to the right
+! URxvt*scrollBar_right:    true
+! scrollbar style
+URxvt*scrollstyle: plaine

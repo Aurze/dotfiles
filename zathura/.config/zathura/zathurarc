@@ -1,0 +1,9 @@
+set recolor-darkcolor "#dcdccc"
+set recolor-lightcolor "#1f1f1f"
+set recolor true
+
+# colors
+set statusbar-bg "#000000"
+set statusbar-fg "#CC0000"
+set default-fg "#FFFFFF"
+set default-bg "#000000"

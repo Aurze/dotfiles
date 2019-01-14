@@ -1,0 +1,47 @@
+{
+  "default_module": "powerline.segments.i3wm",
+  "segments": {
+    "left": [
+      {
+        "function": "powerline.segments.common.net.hostname"
+      },
+      {
+        "type": "segment_list",
+        "function": "powerline.listers.i3wm.workspace_lister",
+        "segments": [
+          {
+            "function": "workspace",
+            "args": {
+              "strip": true
+            }
+          }
+        ]
+      },
+      {
+        "type": "string",
+	"highlight_groups": ["background"],
+	"draw_soft_divider": false,
+	"draw_hard_divider": false,
+	"width": "auto"
+      }
+    ],
+    "right": [
+      {
+        "function": "powerline.segments.common.wthr.weather",
+        "priority": 50
+      },
+      {
+        "function": "powerline.segments.common.time.date",
+        "name": "time",
+        "args": {
+          "format": "%H:%M",
+          "istime": true
+        }
+      },
+      {
+        "function": "powerline.segments.common.time.date"
+      }
+    ]
+  }
+}
+

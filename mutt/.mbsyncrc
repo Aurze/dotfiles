@@ -1,0 +1,119 @@
+##############################################################################
+# arsenault.nic
+##############################################################################
+IMAPAccount arsenault.nic
+Host imap.gmail.com
+User arsenault.nic@gmail.com
+PassCmd "kwallet-query kdewallet -f mail -r arsenault.nic"
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore arsenault.nic-remote
+Account arsenault.nic
+
+MaildirStore arsenault.nic-local
+# The trailing "/" is important
+Path ~/.mail/arsenault.nic/
+Inbox ~/.mail/arsenault.nic/INBOX
+
+Channel   arsenault.nic-inbox
+Master   :arsenault.nic-remote:"[Gmail]"
+Slave    :arsenault.nic-local:"INBOX"
+
+Channel arsenault.nic-sent
+Master :arsenault.nic-remote:"[Gmail]/Sent Mail"
+slave  :arsenault.nic-local:Sent
+Create Both
+
+Channel arsenault.nic-trash
+Master :arsenault.nic-remote:"[Gmail]/Trash"
+slave  :arsenault.nic-local:Trash
+Create Both
+
+Channel arsenault.nic-archive
+Master :arsenault.nic-remote:"[Gmail]/Archive"
+slave  :arsenault.nic-local:All
+
+Channel arsenault.nic-all
+Master :arsenault.nic-remote:"[Gmail]/All Mail"
+slave  :arsenault.nic-local:All
+
+Channel arsenault.nic-junk
+Master :arsenault.nic-remote:"[Gmail]/Spam"
+slave  :arsenault.nic-local:Junk
+
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Automatically delete messages on either side if they are found deleted on the other.
+Expunge Both
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+Group arsenault.nic
+Channel arsenault.nic-inbox
+Channel arsenault.nic-trash
+Channel arsenault.nic-archive
+Channel arsenault.nic-sent
+Channel arsenault.nic-junk
+
+
+##############################################################################
+# n_022
+##############################################################################
+IMAPAccount n_022
+Host imap.outlook.com
+User n_022@hotmail.com
+PassCmd "kwallet-query kdewallet -f mail -r n_022"
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore n_022-remote
+Account n_022
+
+MaildirStore n_022-local
+Path ~/.mail/n_022/
+Inbox ~/.mail/n_022/INBOX
+
+Channel   n_022-inbox
+Master   :n_022-remote:"Inbox"
+Slave    :n_022-local:"INBOX"
+
+Channel n_022-sent
+Master :n_022-remote:"Sent"
+slave  :n_022-local:Sent
+Create Both
+
+Channel n_022-trash
+Master :n_022-remote:"Trash"
+slave  :n_022-local:Trash
+Create Both
+
+Channel n_022-archive
+Master :n_022-remote:"Archive"
+slave  :n_022-local:All
+
+Channel n_022-all
+Master :n_022-remote:"All Mail"
+slave  :n_022-local:All
+
+Channel n_022-junk
+Master :n_022-remote:"Spam"
+slave  :n_022-local:Junk
+
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Automatically delete messages on either side if they are found deleted on the other.
+Expunge Both
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+Group n_022
+Channel n_022-inbox
+Channel n_022-trash
+Channel n_022-archive
+Channel n_022-sent
+Channel n_022-junk
