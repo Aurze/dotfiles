@@ -19,13 +19,26 @@
 ;=====================================================
 ;   colors
 ;=====================================================
+;[colors]
+;material-foreground = ${xrdb:material_foreground}
+;material-dark-background = ${xrdb:material_dark_background}
+;material-light-background = ${xrdb:material_light_background}
+;material-primary = ${xrdb:material_primary}
+;material-warn = ${xrdb:material_warn}
+;black = #000000
+
 [colors]
-material-foreground = ${xrdb:material_foreground}
-material-dark-background = ${xrdb:material_dark_background}
-material-light-background = ${xrdb:material_light_background}
-material-primary = ${xrdb:material_primary}
-material-warn = ${xrdb:material_warn}
-black = #000000
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
+
+[bar/bar]
+; ...
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 ;=====================================================
 ;   variables
@@ -56,11 +69,11 @@ height = ${variables.bar-height}
 bottom = false
 fixed-center = true
 
-border-bottom-size = ${variables.bar-border-size}
-border-color = ${colors.black}
-
-background = ${colors.material-light-background}
-foreground = ${colors.material-foreground}
+;border-bottom-size = ${variables.bar-border-size}
+;border-color = ${colors.black}
+;
+;background = ${colors.light-background}
+;foreground = ${colors.foreground}
 
 font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
@@ -77,28 +90,28 @@ modules-right = mpd rld memory rsd cpu rsd temperature rsd volume rdp date rsp t
 ;=====================================================
 [section/base_left_primary]
 
-format-foreground = ${colors.material-foreground}
-format-background = ${colors.material-primary}
-format-connected-foreground = ${colors.material-foreground}
-format-connected-background = ${colors.material-primary}
-format-warn-foreground = ${colors.material-foreground}
-format-warn-background = ${colors.material-primary}
-format-volume-foreground = ${colors.material-foreground}
-format-volume-background = ${colors.material-primary}
-format-muted-foreground = ${colors.material-foreground}
-format-muted-background = ${colors.material-primary}
-format-charging-foreground = ${colors.material-foreground}
-format-charging-background = ${colors.material-primary}
-format-discharging-foreground = ${colors.material-foreground}
-format-discharging-background = ${colors.material-primary}
-format-full-foreground = ${colors.material-foreground}
-format-full-background = ${colors.material-primary}
-format-playing-foreground = ${colors.material-foreground}
-format-playing-background = ${colors.material-primary}
-format-paused-foreground = ${colors.material-foreground}
-format-paused-background = ${colors.material-primary}
-format-stopped-foreground = ${colors.material-foreground}
-format-stopped-background = ${colors.material-primary}
+format-foreground = ${colors.foreground}
+format-background = ${colors.primary}
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.primary}
+format-warn-foreground = ${colors.foreground}
+format-warn-background = ${colors.primary}
+format-volume-foreground = ${colors.foreground}
+format-volume-background = ${colors.primary}
+format-muted-foreground = ${colors.foreground}
+format-muted-background = ${colors.primary}
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.primary}
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.primary}
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.primary}
+format-playing-foreground = ${colors.foreground}
+format-playing-background = ${colors.primary}
+format-paused-foreground = ${colors.foreground}
+format-paused-background = ${colors.primary}
+format-stopped-foreground = ${colors.foreground}
+format-stopped-background = ${colors.primary}
 
 format-padding = ${variables.label-padding}
 format-connected-padding = ${variables.label-padding}
@@ -117,28 +130,28 @@ format-stopped-padding = ${variables.label-padding}
 ;=====================================================
 [section/base_left_dark]
 
-format-foreground = ${colors.material-foreground}
-format-background = ${colors.material-dark-background}
-format-connected-foreground = ${colors.material-foreground}
-format-connected-background = ${colors.material-dark-background}
-format-warn-foreground = ${colors.material-foreground}
-format-warn-background = ${colors.material-dark-background}
-format-volume-foreground = ${colors.material-foreground}
-format-volume-background = ${colors.material-dark-background}
-format-muted-foreground = ${colors.material-foreground}
-format-muted-background = ${colors.material-dark-background}
-format-charging-foreground = ${colors.material-foreground}
-format-charging-background = ${colors.material-dark-background}
-format-discharging-foreground = ${colors.material-foreground}
-format-discharging-background = ${colors.material-dark-background}
-format-full-foreground = ${colors.material-foreground}
-format-full-background = ${colors.material-dark-background}
-format-playing-foreground = ${colors.material-foreground}
-format-playing-background = ${colors.material-dark-background}
-format-paused-foreground = ${colors.material-foreground}
-format-paused-background = ${colors.material-dark-background}
-format-stopped-foreground = ${colors.material-foreground}
-format-stopped-background = ${colors.material-dark-background}
+format-foreground = ${colors.foreground}
+format-background = ${colors.dark-background}
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.dark-background}
+format-warn-foreground = ${colors.foreground}
+format-warn-background = ${colors.dark-background}
+format-volume-foreground = ${colors.foreground}
+format-volume-background = ${colors.dark-background}
+format-muted-foreground = ${colors.foreground}
+format-muted-background = ${colors.dark-background}
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.dark-background}
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.dark-background}
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.dark-background}
+format-playing-foreground = ${colors.foreground}
+format-playing-background = ${colors.dark-background}
+format-paused-foreground = ${colors.foreground}
+format-paused-background = ${colors.dark-background}
+format-stopped-foreground = ${colors.foreground}
+format-stopped-background = ${colors.dark-background}
 
 format-padding = ${variables.label-padding}
 format-connected-padding = ${variables.label-padding}
@@ -157,28 +170,28 @@ format-stopped-padding = ${variables.label-padding}
 ;=====================================================
 [section/base_left_light]
 
-format-foreground = ${colors.material-foreground}
-format-background = ${colors.material-light-background}
-format-connected-foreground = ${colors.material-foreground}
-format-connected-background = ${colors.material-light-background}
-format-warn-foreground = ${colors.material-foreground}
-format-warn-background = ${colors.material-light-background}
-format-volume-foreground = ${colors.material-foreground}
-format-volume-background = ${colors.material-light-background}
-format-muted-foreground = ${colors.material-foreground}
-format-muted-background = ${colors.material-light-background}
-format-charging-foreground = ${colors.material-foreground}
-format-charging-background = ${colors.material-light-background}
-format-discharging-foreground = ${colors.material-foreground}
-format-discharging-background = ${colors.material-light-background}
-format-full-foreground = ${colors.material-foreground}
-format-full-background = ${colors.material-light-background}
-format-playing-foreground = ${colors.material-foreground}
-format-playing-background = ${colors.material-light-background}
-format-paused-foreground = ${colors.material-foreground}
-format-paused-background = ${colors.material-light-background}
-format-stopped-foreground = ${colors.material-foreground}
-format-stopped-background = ${colors.material-light-background}
+format-foreground = ${colors.foreground}
+format-background = ${colors.light-background}
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.light-background}
+format-warn-foreground = ${colors.foreground}
+format-warn-background = ${colors.light-background}
+format-volume-foreground = ${colors.foreground}
+format-volume-background = ${colors.light-background}
+format-muted-foreground = ${colors.foreground}
+format-muted-background = ${colors.light-background}
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.light-background}
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.light-background}
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.light-background}
+format-playing-foreground = ${colors.foreground}
+format-playing-background = ${colors.light-background}
+format-paused-foreground = ${colors.foreground}
+format-paused-background = ${colors.light-background}
+format-stopped-foreground = ${colors.foreground}
+format-stopped-background = ${colors.light-background}
 
 format-padding = ${variables.label-padding}
 format-connected-padding = ${variables.label-padding}
@@ -197,28 +210,28 @@ format-stopped-padding = ${variables.label-padding}
 ;=====================================================
 [section/base_right_primary]
 
-format-foreground = ${colors.material-foreground}
-format-background = ${colors.material-primary}
-format-connected-foreground = ${colors.material-foreground}
-format-connected-background = ${colors.material-primary}
-format-warn-foreground = ${colors.material-foreground}
-format-warn-background = ${colors.material-primary}
-format-volume-foreground = ${colors.material-foreground}
-format-volume-background = ${colors.material-primary}
-format-muted-foreground = ${colors.material-foreground}
-format-muted-background = ${colors.material-primary}
-format-charging-foreground = ${colors.material-foreground}
-format-charging-background = ${colors.material-primary}
-format-discharging-foreground = ${colors.material-foreground}
-format-discharging-background = ${colors.material-primary}
-format-full-foreground = ${colors.material-foreground}
-format-full-background = ${colors.material-primary}
-format-playing-foreground = ${colors.material-foreground}
-format-playing-background = ${colors.material-primary}
-format-paused-foreground = ${colors.material-foreground}
-format-paused-background = ${colors.material-primary}
-format-stopped-foreground = ${colors.material-foreground}
-format-stopped-background = ${colors.material-primary}
+format-foreground = ${colors.foreground}
+format-background = ${colors.primary}
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.primary}
+format-warn-foreground = ${colors.foreground}
+format-warn-background = ${colors.primary}
+format-volume-foreground = ${colors.foreground}
+format-volume-background = ${colors.primary}
+format-muted-foreground = ${colors.foreground}
+format-muted-background = ${colors.primary}
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.primary}
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.primary}
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.primary}
+format-playing-foreground = ${colors.foreground}
+format-playing-background = ${colors.primary}
+format-paused-foreground = ${colors.foreground}
+format-paused-background = ${colors.primary}
+format-stopped-foreground = ${colors.foreground}
+format-stopped-background = ${colors.primary}
 
 format-padding = ${variables.label-padding}
 format-connected-padding = ${variables.label-padding}
@@ -237,28 +250,28 @@ format-stopped-padding = ${variables.label-padding}
 ;=====================================================
 [section/base_right_dark]
 
-format-foreground = ${colors.material-foreground}
-format-background = ${colors.material-dark-background}
-format-connected-foreground = ${colors.material-foreground}
-format-connected-background = ${colors.material-dark-background}
-format-warn-foreground = ${colors.material-foreground}
-format-warn-background = ${colors.material-dark-background}
-format-volume-foreground = ${colors.material-foreground}
-format-volume-background = ${colors.material-dark-background}
-format-muted-foreground = ${colors.material-foreground}
-format-muted-background = ${colors.material-dark-background}
-format-charging-foreground = ${colors.material-foreground}
-format-charging-background = ${colors.material-dark-background}
-format-discharging-foreground = ${colors.material-foreground}
-format-discharging-background = ${colors.material-dark-background}
-format-full-foreground = ${colors.material-foreground}
-format-full-background = ${colors.material-dark-background}
-format-playing-foreground = ${colors.material-foreground}
-format-playing-background = ${colors.material-dark-background}
-format-paused-foreground = ${colors.material-foreground}
-format-paused-background = ${colors.material-dark-background}
-format-stopped-foreground = ${colors.material-foreground}
-format-stopped-background = ${colors.material-dark-background}
+format-foreground = ${colors.foreground}
+format-background = ${colors.dark-background}
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.dark-background}
+format-warn-foreground = ${colors.foreground}
+format-warn-background = ${colors.dark-background}
+format-volume-foreground = ${colors.foreground}
+format-volume-background = ${colors.dark-background}
+format-muted-foreground = ${colors.foreground}
+format-muted-background = ${colors.dark-background}
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.dark-background}
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.dark-background}
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.dark-background}
+format-playing-foreground = ${colors.foreground}
+format-playing-background = ${colors.dark-background}
+format-paused-foreground = ${colors.foreground}
+format-paused-background = ${colors.dark-background}
+format-stopped-foreground = ${colors.foreground}
+format-stopped-background = ${colors.dark-background}
 
 format-padding = ${variables.label-padding}
 format-connected-padding = ${variables.label-padding}
@@ -277,28 +290,28 @@ format-stopped-padding = ${variables.label-padding}
 ;=====================================================
 [section/base_right_light]
 
-format-foreground = ${colors.material-foreground}
-format-background = ${colors.material-light-background}
-format-connected-foreground = ${colors.material-foreground}
-format-connected-background = ${colors.material-light-background}
-format-warn-foreground = ${colors.material-foreground}
-format-warn-background = ${colors.material-light-background}
-format-volume-foreground = ${colors.material-foreground}
-format-volume-background = ${colors.material-light-background}
-format-muted-foreground = ${colors.material-foreground}
-format-muted-background = ${colors.material-light-background}
-format-charging-foreground = ${colors.material-foreground}
-format-charging-background = ${colors.material-light-background}
-format-discharging-foreground = ${colors.material-foreground}
-format-discharging-background = ${colors.material-light-background}
-format-full-foreground = ${colors.material-foreground}
-format-full-background = ${colors.material-light-background}
-format-playing-foreground = ${colors.material-foreground}
-format-playing-background = ${colors.material-light-background}
-format-paused-foreground = ${colors.material-foreground}
-format-paused-background = ${colors.material-light-background}
-format-stopped-foreground = ${colors.material-foreground}
-format-stopped-background = ${colors.material-light-background}
+format-foreground = ${colors.foreground}
+format-background = ${colors.light-background}
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.light-background}
+format-warn-foreground = ${colors.foreground}
+format-warn-background = ${colors.light-background}
+format-volume-foreground = ${colors.foreground}
+format-volume-background = ${colors.light-background}
+format-muted-foreground = ${colors.foreground}
+format-muted-background = ${colors.light-background}
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.light-background}
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.light-background}
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.light-background}
+format-playing-foreground = ${colors.foreground}
+format-playing-background = ${colors.light-background}
+format-paused-foreground = ${colors.foreground}
+format-paused-background = ${colors.light-background}
+format-stopped-foreground = ${colors.foreground}
+format-stopped-background = ${colors.light-background}
 
 format-padding = ${variables.label-padding}
 format-connected-padding = ${variables.label-padding}
@@ -319,8 +332,8 @@ format-stopped-padding = ${variables.label-padding}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-foreground}
-content-background = ${colors.material-primary}
+content-foreground = ${colors.foreground}
+content-background = ${colors.primary}
 
 ;=====================================================
 ;   module/lsd
@@ -329,8 +342,8 @@ content-background = ${colors.material-primary}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-foreground}
-content-background = ${colors.material-dark-background}
+content-foreground = ${colors.foreground}
+content-background = ${colors.dark-background}
 
 ;=====================================================
 ;   module/lsl
@@ -339,8 +352,8 @@ content-background = ${colors.material-dark-background}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-foreground}
-content-background = ${colors.material-light-background}
+content-foreground = ${colors.foreground}
+content-background = ${colors.light-background}
 
 ;=====================================================
 ;   module/ldl
@@ -349,8 +362,8 @@ content-background = ${colors.material-light-background}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-dark-background}
-content-background = ${colors.material-light-background}
+content-foreground = ${colors.dark-background}
+content-background = ${colors.light-background}
 
 ;=====================================================
 ;   module/ldp
@@ -359,8 +372,8 @@ content-background = ${colors.material-light-background}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-dark-background}
-content-background = ${colors.material-primary}
+content-foreground = ${colors.dark-background}
+content-background = ${colors.primary}
 
 ;=====================================================
 ;   module/lpd
@@ -369,8 +382,8 @@ content-background = ${colors.material-primary}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-primary}
-content-background = ${colors.material-dark-background}
+content-foreground = ${colors.primary}
+content-background = ${colors.dark-background}
 
 ;=====================================================
 ;   module/lpl
@@ -379,8 +392,8 @@ content-background = ${colors.material-dark-background}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-primary}
-content-background = ${colors.material-light-background}
+content-foreground = ${colors.primary}
+content-background = ${colors.light-background}
 
 ;=====================================================
 ;   module/rsp
@@ -389,8 +402,8 @@ content-background = ${colors.material-light-background}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-foreground}
-content-background = ${colors.material-primary}
+content-foreground = ${colors.foreground}
+content-background = ${colors.primary}
 
 ;=====================================================
 ;   module/rsd
@@ -399,8 +412,8 @@ content-background = ${colors.material-primary}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-foreground}
-content-background = ${colors.material-dark-background}
+content-foreground = ${colors.foreground}
+content-background = ${colors.dark-background}
 
 ;=====================================================
 ;   module/rsl
@@ -409,8 +422,8 @@ content-background = ${colors.material-dark-background}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-foreground}
-content-background = ${colors.material-light-background}
+content-foreground = ${colors.foreground}
+content-background = ${colors.light-background}
 
 ;=====================================================
 ;   module/rdp
@@ -419,8 +432,8 @@ content-background = ${colors.material-light-background}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-primary}
-content-background = ${colors.material-dark-background}
+content-foreground = ${colors.primary}
+content-background = ${colors.dark-background}
 
 ;=====================================================
 ;   module/rld
@@ -429,8 +442,8 @@ content-background = ${colors.material-dark-background}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-dark-background}
-content-background = ${colors.material-light-background}
+content-foreground = ${colors.dark-background}
+content-background = ${colors.light-background}
 
 ;=====================================================
 ;   module/rlp
@@ -439,8 +452,8 @@ content-background = ${colors.material-light-background}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-primary}
-content-background = ${colors.material-light-background}
+content-foreground = ${colors.primary}
+content-background = ${colors.light-background}
 
 ;=====================================================
 ;   module/rpd
@@ -449,8 +462,8 @@ content-background = ${colors.material-light-background}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-dark-background}
-content-background = ${colors.material-primary}
+content-foreground = ${colors.dark-background}
+content-background = ${colors.primary}
 
 ;=====================================================
 ;   module/rpl
@@ -459,8 +472,8 @@ content-background = ${colors.material-primary}
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.material-light-background}
-content-background = ${colors.material-primary}
+content-foreground = ${colors.light-background}
+content-background = ${colors.primary}
 
 ;=====================================================
 ;   module/user
@@ -469,7 +482,7 @@ content-background = ${colors.material-primary}
 type = custom/text
 
 content = %{T5}%{T-} %{T2}spitfjre%{T-}
-content-background = ${colors.material-primary}
+content-background = ${colors.primary}
 content-padding = ${variables.label-padding}
 
 ;=====================================================
@@ -493,7 +506,7 @@ strip-wsnumbers = true
 pin-workspaces = true
 
 format-padding = ${variables.label-padding}
-format-background = ${colors.material-primary}
+format-background = ${colors.primary}
 
 label-focused = %{T4}●%{T-} %index%
 label-focused-font = 2

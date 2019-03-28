@@ -1,1 +1,1 @@
-echo "neovim powerline"
+echo "neovim powerline python-neovim"

@@ -150,3 +150,9 @@ repo = 'huawenyu/neogdb.vim'
 
 [[plugins]]
 repo = 'luochen1990/rainbow'
+
+[[plugins]]
+repo = 'dylanaraps/wal.vim'
+hook_source = '''
+  colorscheme wal
+'''
