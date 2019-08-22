@@ -34,13 +34,23 @@ echo "Version is $VER"
 
 install_package() {
 	packages=$@
-	if [ "$OS" == "Ubuntu" ]; then
-		echo "apt install $@"
-		sudo apt install $@
-	else	
-		echo "pikaur -Sy $@"
-		pikaur -Sy $@
-	fi
+	case "$OS" in
+		Ubuntu)
+			echo "apt install $@"
+	                sudo apt install $@
+			;;
+		Darwin)
+			echo "brew install $@"
+	                brew install $@
+			;;
+		Archlinux)
+			echo "pikaur -Sy $@"
+	                pikaur -Sy $@
+			;;
+		*)
+			echo "OS not supported"
+			;;
+	esac
 }
 
 install_packages() {

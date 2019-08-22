@@ -4,7 +4,7 @@ call deoplete#custom#source('LanguageClient',
 
 let g:LanguageClient_serverCommands = {
   \ 'cpp': ['clangd'],
-  \ 'java': ['/usr/local/bin/jdtls'],
+  \ 'java': ['/usr/local/bin/jdtls', '-data', getcwd()],
   \ 'dockerfile': [&shell, &shellcmdflag, 'docker-langserver --stdio'],
   \ 'python': ['pyls'],
   \ }
