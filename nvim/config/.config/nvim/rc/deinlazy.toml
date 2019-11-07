@@ -503,3 +503,20 @@ on_ft = 'haskell'
 hook_source = '''
 let g:haskell_conceal = 0
 '''
+
+
+##############################################################################
+#
+#  Additional plugins
+#
+##############################################################################
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+depends = ['deoplete.nvim']
+on_event = 'InsertEnter'
+build = 'bash install.sh'
+rev = 'next'
+on_ft = ['c', 'cpp', 'python', 'dockerfile', 'java']
+hook_source = '''
+source ~/.config/nvim/rc/plugins/languageclient.rc.vim
+'''
