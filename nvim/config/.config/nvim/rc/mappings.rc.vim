@@ -6,7 +6,7 @@
 nmap <C-Space>  <C-@>
 cmap <C-Space>  <C-@>
 
-" Visual mode keymappings: "{{{
+" Visual mode keymappings:
 " Indent
 nnoremap > >>
 nnoremap < <<
@@ -16,17 +16,16 @@ xnoremap < <gv
 if (!has('nvim') || $DISPLAY != '') && has('clipboard')
   xnoremap <silent> y "*y:let [@+,@"]=[@*,@*]<CR>
 endif
-"}}}
 
-" Insert mode keymappings: "{{{
+" Insert mode keymappings:
 " <C-t>: insert tab.
 inoremap <C-t>  <C-v><TAB>
 " Enable undo <C-w> and <C-u>.
 inoremap <C-w>  <C-g>u<C-w>
 inoremap <C-u>  <C-g>u<C-u>
-"}}}
+inoremap <C-k>  <C-o>D
 
-" Command-line mode keymappings:"{{{
+" Command-line mode keymappings:
 " <C-a>, A: move to head.
 cnoremap <C-a>          <Home>
 " <C-b>: previous char.
@@ -45,9 +44,8 @@ cnoremap <C-p>          <Up>
 cnoremap <C-y>          <C-r>*
 " <C-g>: Exit.
 cnoremap <C-g>          <C-c>
-"}}}
 
-" [Space]: Other useful commands "{{{
+" [Space]: Other useful commands
 " Smart space mapping.
 nmap  <Space>   [Space]
 nnoremap  [Space]   <Nop>
@@ -59,7 +57,7 @@ nnoremap [Space]ar
 nnoremap [Space]p
       \ :<C-u>call vimrc#toggle_option('spell')<CR>
       \: set spelllang=en_us<CR>
-      \: set spelllang+=fr_ca<CR>
+      \: set spelllang+=cjk<CR>
 nnoremap [Space]w
       \ :<C-u>call vimrc#toggle_option('wrap')<CR>
 
@@ -69,7 +67,7 @@ nnoremap <silent> [Space]ev  :<C-u>edit $MYVIMRC<CR>
 " Useful save mappings.
 nnoremap <silent> <Leader><Leader> :<C-u>update<CR>
 
-" s: Windows and buffers(High priority) "{{{
+" s: Windows and buffers(High priority)
 " The prefix key.
 nnoremap    [Window]   <Nop>
 nmap    s [Window]
@@ -77,17 +75,6 @@ nnoremap <silent> [Window]p  :<C-u>vsplit<CR>:wincmd w<CR>
 nnoremap <silent> [Window]o  :<C-u>only<CR>
 nnoremap <silent> <Tab>      :wincmd w<CR>
 nnoremap <silent><expr> q winnr('$') != 1 ? ':<C-u>close<CR>' : ""
-"}}}
-
-" e: Change basic commands "{{{
-" The prefix key.
-nnoremap [Alt]   <Nop>
-nmap    S  [Alt]
-
-" Indent paste.
-nnoremap <silent> [Alt]p o<Esc>pm``[=`]``^
-nnoremap <silent> [Alt]P O<Esc>Pm``[=`]``^
-"}}}
 
 " Better x
 nnoremap x "_x
@@ -121,22 +108,20 @@ xnoremap <expr> l foldclosed(line('.')) != -1 ? 'zogv0' : 'l'
 " Substitute.
 xnoremap s :s//g<Left><Left>
 
-" Sticky shift in English keyboard."{{{
+" Sticky shift in English keyboard.
 " Sticky key.
-" inoremap <expr> ;  vimrc#sticky_func()
-" cnoremap <expr> ;  vimrc#sticky_func()
-" snoremap <expr> ;  vimrc#sticky_func()
-" "}}}
+inoremap <expr> ;  vimrc#sticky_func()
+cnoremap <expr> ;  vimrc#sticky_func()
+snoremap <expr> ;  vimrc#sticky_func()
 
-" Easy escape."{{{
+" Easy escape.
 inoremap jj           <ESC>
 cnoremap <expr> j
       \ getcmdline()[getcmdpos()-2] ==# 'j' ? "\<BS>\<C-c>" : 'j'
 
 inoremap j<Space>     j
-"}}}
 
-" a>, i], etc... "{{{
+" a>, i], etc...
 " <angle>
 onoremap aa  a>
 xnoremap aa  a>
@@ -148,7 +133,6 @@ onoremap ar  a]
 xnoremap ar  a]
 onoremap ir  i]
 xnoremap ir  i]
-"}}}
 
 " Improved increment.
 nmap <C-a> <SID>(increment)
@@ -160,17 +144,12 @@ command! -range -nargs=1 AddNumbers
 
 nnoremap <silent> #    <C-^>
 
-" Change current word and repeatable
-nnoremap cn *``cgn
-nnoremap cN *``cgN
-
-" Change selected word and repeatable
-vnoremap <expr> cn "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>" . "``cgn"
-vnoremap <expr> cN "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>" . "``cgN"
-
 if exists(':tnoremap')
   tnoremap   <ESC>      <C-\><C-n>
   tnoremap   jj         <C-\><C-n>
   tnoremap   j<Space>   j
   tnoremap <expr> ;  vimrc#sticky_func()
 endif
+
+" Wordcount
+command! WordCount echo strchars(join(getline(1, '$')))

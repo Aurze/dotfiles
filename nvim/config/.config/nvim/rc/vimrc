@@ -12,7 +12,7 @@ if &compatible
   set nocompatible
 endif
 
-function! s:source_rc(path, ...) abort "{{{
+function! s:source_rc(path, ...) abort
   let use_global = get(a:000, 0, !has('vim_starting'))
   let abspath = resolve(expand('~/.config/nvim/rc/' . a:path))
   if !use_global
@@ -33,7 +33,7 @@ function! s:source_rc(path, ...) abort "{{{
       call delete(tempfile)
     endif
   endtry
-endfunction"}}}
+endfunction
 
 " Set augroup.
 augroup MyAutoCmd
@@ -41,6 +41,8 @@ augroup MyAutoCmd
   autocmd FileType,Syntax,BufNewFile,BufNew,BufRead *?
         \ call vimrc#on_filetype()
   autocmd CursorHold *.toml syntax sync minlines=300
+augroup END
+augroup filetypedetect
 augroup END
 
 if has('vim_starting')
@@ -56,9 +58,6 @@ endif
 if !has('vim_starting')
   call dein#call_hook('source')
   call dein#call_hook('post_source')
-
-  syntax enable
-  filetype plugin indent on
 endif
 
 
@@ -90,7 +89,3 @@ endif
 set secure
 
 " vim: foldmethod=marker
-
-" neogdb.vim
-let g:neogdb_window = ['backtrace', 'breakpoint']
-let g:neobugger_leader = ';'

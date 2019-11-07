@@ -1,5 +1,6 @@
 " dein configurations.
 
+let g:dein#auto_recache = 1
 let g:dein#install_progress_type = 'title'
 let g:dein#enable_notification = 1
 let g:dein#notification_icon = '~/.config/nvim/signs/warn.png'
@@ -10,14 +11,17 @@ if !dein#load_state(s:path)
   finish
 endif
 
-call dein#begin(s:path, expand('<sfile>'))
+let s:dein_toml = '~/.config/nvim/rc/dein.toml'
+let s:dein_lazy_toml = '~/.config/nvim/rc/deinlazy.toml'
+let s:dein_ft_toml = '~/.config/nvim/rc/deinft.toml'
 
-call dein#load_toml('~/.config/nvim/rc/dein.toml', {'lazy': 0})
-call dein#load_toml('~/.config/nvim/rc/deinlazy.toml', {'lazy' : 1})
-if has('nvim')
-  call dein#load_toml('~/.config/nvim/rc/deineo.toml', {})
-endif
-call dein#load_toml('~/.config/nvim/rc/deinft.toml')
+call dein#begin(s:path, [
+      \ expand('<sfile>'), s:dein_toml, s:dein_lazy_toml, s:dein_ft_toml
+      \ ])
+
+call dein#load_toml(s:dein_toml, {'lazy': 0})
+call dein#load_toml(s:dein_lazy_toml, {'lazy' : 1})
+call dein#load_toml(s:dein_ft_toml)
 
 let s:vimrc_local = findfile('vimrc_local.vim', '.;')
 if s:vimrc_local !=# ''

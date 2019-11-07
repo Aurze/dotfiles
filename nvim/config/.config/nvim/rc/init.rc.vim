@@ -81,9 +81,6 @@ if s:dein_dir != '' || &runtimepath !~ '/dein.vim'
         \ fnamemodify(s:dein_dir, ':p') , '/$', '', '')
 endif
 
-" Disable packpath
-set packpath=
-
 
 "---------------------------------------------------------------------------
 " Disable default plugins
@@ -110,5 +107,3 @@ let g:loaded_tarPlugin         = 1
 let g:loaded_tutor_mode_plugin = 1
 let g:loaded_vimballPlugin     = 1
 let g:loaded_zipPlugin         = 1
-
-let g:LanguageClient_serverCommands = { 'cpp': ['clangd'], }

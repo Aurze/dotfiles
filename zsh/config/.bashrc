@@ -13,3 +13,7 @@ PS1='[\u@\h \W]\$ '
 
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
+
+export TERM=screen-256color
+
+export PATH=$PATH":$HOME/bin"

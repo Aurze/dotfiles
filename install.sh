@@ -43,7 +43,7 @@ install_package() {
 			echo "brew install $@"
 	                brew install $@
 			;;
-		Archlinux)
+		Arch*)
 			echo "pikaur -Sy $@"
 	                pikaur -Sy $@
 			;;

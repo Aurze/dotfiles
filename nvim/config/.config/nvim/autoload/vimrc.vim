@@ -17,7 +17,7 @@ function! vimrc#sticky_func() abort
   let char = ''
 
   while 1
-    let char = nr2char(getchar())
+    silent! let char = nr2char(getchar())
 
     if char =~ '\l'
       let char = toupper(char)
@@ -61,11 +61,11 @@ function! vimrc#toggle_option(option_name) abort
   execute 'setlocal' a:option_name.'?'
 endfunction
 
-function! vimrc#on_filetype() abort "{{{
+function! vimrc#on_filetype() abort
   if execute('filetype') =~# 'OFF'
     " Lazy loading
     silent! filetype plugin indent on
     syntax enable
     filetype detect
   endif
-endfunction "}}}
+endfunction

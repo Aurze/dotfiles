@@ -30,7 +30,7 @@ set expandtab
 " Spaces instead <Tab>.
 " set softtabstop=4
 " Autoindent width.
-set shiftwidth=2
+set shiftwidth=4
 " Round indent by shiftwidth.
 set shiftround
 
@@ -47,6 +47,7 @@ endfunction
 " Disable modeline.
 set modelines=0
 set nomodeline
+autocmd MyAutoCmd BufRead,BufWritePost *.txt setlocal modelines=5 modeline
 
 " Use clipboard register.
 
@@ -108,7 +109,7 @@ set isfname-==
 set timeout timeoutlen=3000 ttimeoutlen=100
 
 " CursorHold time.
-set updatetime=1000
+set updatetime=100
 
 " Set swap directory.
 set directory-=.
@@ -123,9 +124,6 @@ set virtualedit=block
 " Set keyword help.
 set keywordprg=:help
 
-" Check timestamp more for 'autoread'.
-autocmd MyAutoCmd WinEnter * checktime
-
 " Disable paste.
 autocmd MyAutoCmd InsertLeave *
       \ if &paste | setlocal nopaste | echo 'nopaste' | endif |
@@ -133,6 +131,10 @@ autocmd MyAutoCmd InsertLeave *
 
 " Update diff.
 autocmd MyAutoCmd InsertLeave * if &l:diff | diffupdate | endif
+
+if has('patch-8.1.0360')
+  set diffopt=internal,algorithm:patience,indent-heuristic
+endif
 
 " Make directory automatically.
 " --------------------------------------
@@ -173,16 +175,16 @@ let t:cwd = getcwd()
 " Show <TAB> and <CR>
 set list
 if IsWindows()
-   set listchars=tab:>-,trail:-,extends:>,precedes:<
+   set listchars=tab:>-,trail:-,precedes:<
 else
-   set listchars=tab:▸\ ,trail:-,extends:»,precedes:«,nbsp:%
+   set listchars=tab:▸\ ,trail:-,precedes:«,nbsp:%
 endif
 " Always display statusline.
 set laststatus=2
 " Height of command line.
 set cmdheight=2
 " Not show command on statusline.
-set noshowcmd
+" set noshowcmd
 " Show title.
 set title
 " Title length.
@@ -190,10 +192,7 @@ set titlelen=95
 " Title string.
 let &g:titlestring="
       \ %{expand('%:p:~:.')}%(%m%r%w%)
-      \ %<\(%{WidthPart(
-      \ fnamemodify(&filetype ==# 'vimfiler' ?
-      \ substitute(b:vimfiler.current_dir, '.\\zs/$', '', '') : getcwd(), ':~'),
-      \ &columns-len(expand('%:p:.:~')))}\) - VIM"
+      \ %<\(%{fnamemodify(getcwd(), ':~')}\) - VIM"
 " Disable tabline.
 set showtabline=0
 
@@ -248,15 +247,22 @@ set t_vb=
 set novisualbell
 set belloff=all
 
-" Display candidate supplement.
-set nowildmenu
-set wildmode=list:longest,full
+if has('nvim')
+  " Display candidates by popup menu.
+  set wildmenu
+  set wildmode=full
+  set wildoptions+=pum
+else
+  " Display candidates by list.
+  set nowildmenu
+  set wildmode=list:longest,full
+endif
 " Increase history amount.
 set history=1000
 " Display all the information of the tag by the supplement of the Insert mode.
 set showfulltag
 " Can supplement a tag in a command-line.
-set wildoptions=tagfile
+set wildoptions+=tagfile
 
 if has('nvim')
   set shada=!,'300,<50,s10,h
@@ -269,8 +275,9 @@ let g:did_install_default_menus = 1
 
 " Completion setting.
 set completeopt=menuone
-if has('patch-7.4.775')
-  set completeopt+=noinsert
+if exists('+completepopup')
+  set completeopt+=popup
+  set completepopup=height:4,width:60,highlight:InfoPopup
 endif
 " Don't complete from other buffer.
 set complete=.
@@ -308,25 +315,11 @@ set display=lastline
 " Display an invisible letter with hex format.
 "set display+=uhex
 
-function! WidthPart(str, width) abort "{{{
-  if a:width <= 0
-    return ''
-  endif
-  let ret = a:str
-  let width = strwidth(a:str)
-  while width > a:width
-    let char = matchstr(ret, '.$')
-    let ret = ret[: -1 - len(char)]
-    let width -= strwidth(char)
-  endwhile
-
-  return ret
-endfunction"}}}
-
 " For conceal.
 set conceallevel=2 concealcursor=niv
 
 set colorcolumn=79
 
-set number relativenumber
-
+if exists('+previewpopup')
+  set previewpopup=height:10,width:60
+endif
