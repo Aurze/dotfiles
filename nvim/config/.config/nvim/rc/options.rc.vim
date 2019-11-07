@@ -323,3 +323,10 @@ set colorcolumn=79
 if exists('+previewpopup')
   set previewpopup=height:10,width:60
 endif
+
+"-----------------------------------------------------------------------------
+"
+"  Additional configs
+"
+"-----------------------------------------------------------------------------
+set number relativenumber

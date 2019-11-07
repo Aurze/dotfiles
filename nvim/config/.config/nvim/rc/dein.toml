@@ -38,10 +38,6 @@ repo = 'vim-jp/vimdoc-ja'
 repo = 'thinca/vim-themis'
 
 [[plugins]]
-repo = 'nixprime/cpsm'
-build = 'sh -c "PY3=ON ./install.sh"'
-
-[[plugins]]
 repo = 'Shirk/vim-gas'
 
 [[plugins]]
@@ -60,3 +56,27 @@ repo = 'roxma/nvim-yarp'
 [[plugins]]
 repo = 'tbodt/deoplete-tabnine'
 build = './install.sh'
+
+
+##############################################################################
+#
+#  Additional pluggins
+#
+##############################################################################
+[[plugins]]
+repo = 'wsdjeg/dein-ui.vim'
+
+[[plugins]]
+repo = 'luochen1990/rainbow'
+
+[[plugins]]
+repo  = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'huawenyu/neogdb.vim'
+
+[[plugins]]
+repo = 'dylanaraps/wal.vim'
+hook_source = '''
+  colorscheme wal
+'''
