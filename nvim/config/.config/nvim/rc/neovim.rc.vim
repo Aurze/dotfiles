@@ -6,8 +6,8 @@ if has('vim_starting') && empty(argv())
   syntax off
 endif
 
-let g:python_host_prog  = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog  = substitute(system("which python2"), '\n', '', 'g')
+let g:python3_host_prog = substitute(system("which python3"), '\n', '', 'g')
 
 if exists('&inccommand')
   set inccommand=nosplit
