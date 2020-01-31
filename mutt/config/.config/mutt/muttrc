@@ -1,4 +1,4 @@
-source $HOME/.config/mutt/config/colors.mutt
+# source $HOME/.config/mutt/config/colors.mutt
 source $HOME/.config/mutt/config/bindings.mutt
 
 source ~/.config/mutt/accounts/arsenault.nic
@@ -82,6 +82,9 @@ mailboxes =arsenault.nic
 mailboxes =arsenault.nic/INBOX =arsenault.nic/All =arsenault.nic/Sent =arsenault.nic/Drafts =arsenault.nic/Junk =arsenault.nic/Trash
 mailboxes =n_022
 mailboxes =n_022/INBOX =n_022/Archive =n_022/Sent =n_022/Drafts =n_022/Junk =n_022/Trash
+mailboxes =b00tlegger
+mailboxes =b00tlegger/INBOX =b00tlegger/Archive =b00tlegger/Sent =b00tlegger/Drafts =b00tlegger/Junk =b00tlegger/Trash
 
 folder-hook arsenault.nic/* source ~/.config/mutt/accounts/arsenault.nic
 folder-hook n_022/* source ~/.config/mutt/accounts/n_022
+folder-hook b00tlegger/* source ~/.config/mutt/accounts/b00tlegger

@@ -1,0 +1,58 @@
+##############################################################################
+# b00tlegger
+##############################################################################
+IMAPAccount b00tlegger
+Host imap.outlook.com
+User b00tlegger@hotmail.com
+PassCmd "pass b00tlegger"
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore b00tlegger-remote
+Account b00tlegger
+
+MaildirStore b00tlegger-local
+Path ~/.mail/b00tlegger/
+Inbox ~/.mail/b00tlegger/INBOX
+
+Channel   b00tlegger-inbox
+Master   :b00tlegger-remote:"Inbox"
+Slave    :b00tlegger-local:"INBOX"
+
+Channel b00tlegger-sent
+Master :b00tlegger-remote:"Sent"
+slave  :b00tlegger-local:Sent
+Create Both
+
+Channel b00tlegger-trash
+Master :b00tlegger-remote:"Trash"
+slave  :b00tlegger-local:Trash
+Create Both
+
+Channel b00tlegger-archive
+Master :b00tlegger-remote:"Archive"
+slave  :b00tlegger-local:All
+
+Channel b00tlegger-all
+Master :b00tlegger-remote:"All Mail"
+slave  :b00tlegger-local:All
+
+Channel b00tlegger-junk
+Master :b00tlegger-remote:"Spam"
+slave  :b00tlegger-local:Junk
+
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Automatically delete messages on either side if they are found deleted on the other.
+Expunge Both
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+Group b00tlegger
+Channel b00tlegger-inbox
+Channel b00tlegger-trash
+Channel b00tlegger-archive
+Channel b00tlegger-sent
+Channel b00tlegger-junk
