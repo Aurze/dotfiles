@@ -520,3 +520,7 @@ on_ft = ['c', 'cpp', 'python', 'dockerfile', 'java']
 hook_source = '''
 source ~/.config/nvim/rc/plugins/languageclient.rc.vim
 '''
+
+[[plugins]]
+repo = 'habamax/vim-asciidoctor'
+on_ft = 'adoc'
