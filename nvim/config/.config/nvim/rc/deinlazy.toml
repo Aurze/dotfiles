@@ -15,7 +15,7 @@ call echodoc#enable()
 repo = 'Shougo/defx.nvim'
 hook_add = '''
 nnoremap <silent>   [Space]f
-\ :<C-u>Defx -listed -resume -buffer-name=tab`tabpagenr()`<CR>
+\ :<C-u>Defx -split=vertical -winwidth=50 -direction=topleft<CR>
 '''
 hook_source = '''
 call defx#custom#column('mark', {
