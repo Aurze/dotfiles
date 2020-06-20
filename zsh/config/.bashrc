@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+alias cp="rsync -ah --inplace --no-whole-file --info=progress2"
 PS1='[\u@\h \W]\$ '
 
 # pywal color scheme

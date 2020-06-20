@@ -13,6 +13,8 @@ fileext = ".vcf"
 
 [storage card_remote]
 type = "carddav"
-url = "https://nextcloud.home/"
+url = "https://nextcloud.home/remote.php/dav/addressbooks/users/nicolas/contacts"
 username = "nicolas"
 password.fetch = ["command", "pass", "nextcloud"]
+verify_fingerprint = "DA:2E:B3:0C:36:C0:C9:BA:76:7D:06:8E:2A:D4:99:6C:FF:A8:72:77"
+verify = false
