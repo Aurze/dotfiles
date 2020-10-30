@@ -6,8 +6,8 @@
 
 # Autostart
 
-exec /usr/lib/kdeconnectd
-exec kdeconnect-indicator
+# exec /usr/lib/kdeconnectd
+# exec kdeconnect-indicator
 # exec nextcloud
 #exec ulauncher --hide-window
 # exec --no-startup-id nm-applet
@@ -26,9 +26,9 @@ exec /usr/lib/polkit-kde-authentication-agent-1
 # Applications
 
 exec --no-startup-id 'workspace 1; exec firefox'
-# exec --no-startup-id 'workspace 2; exec termite; workspace 1'
+# exec --no-startup-id 'workspace 2; exec kitty; workspace 1'
 # exec --no-startup-id sway-msg 'workspace 5; exec chromium; workspace 1'
-# exec --no-startup-id i3-msg 'workspace 3; exec termite; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 3; exec kitty; workspace 1'
 
 # Windows Rules 
 
@@ -60,14 +60,12 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term termite
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-# set $menu rofi -show drun -config ~/.config/rofi/sidetab.rasi -font 'ProductSans 10'
 set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/menu -I
-# set $menu nwgdmenu -o 0 -r 8
-# set $menu rofi -show drun -config ~/.config/rofi/rofi-spotlight/rofi.rasi
+
 # Window switcher
 bindsym $mod+d exec rofi -modi "Global Search":"~/.config/rofi/rofi-spotlight/rofi-spotlight.sh" -show "Global Search" \
 -config ~/.config/rofi/rofi-spotlight/rofi.rasi
