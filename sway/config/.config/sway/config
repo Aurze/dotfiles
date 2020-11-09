@@ -49,7 +49,6 @@ for_window [workspace="3"] layout tabbed
 for_window [workspace="4"] layout tabbed 
 for_window [workspace="5"] layout tabbed
 for_window [workspace="6"] fullscreen toggle
-for_window [app_id="dolphin"] opacity 0.97
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -67,8 +66,8 @@ set $term kitty
 set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/menu -I
 
 # Window switcher
-bindsym $mod+d exec rofi -modi "Global Search":"~/.config/rofi/rofi-spotlight/rofi-spotlight.sh" -show "Global Search" \
--config ~/.config/rofi/rofi-spotlight/rofi.rasi
+# bindsym $mod+d exec rofi -modi "Global Search":"~/.config/rofi/rofi-spotlight/rofi-spotlight.sh" -show "Global Search" \
+# -config ~/.config/rofi/rofi-spotlight/rofi.rasi
 
 # Disable titlebar
 default_border pixel 3
@@ -88,16 +87,15 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 #Asignments
 assign [app_id="lutris"] 4
 assign [app_id="gamehub"] 4
-assign [app_id="steam"] 4
+assign [class="Steam"] 4
 assign [app_id="gnome-boxes"] 6
-assign [app_id="signal"] 5
-assign [app_id="discord"] 5
+assign [class="discord"] 5
 assign [title="Wine System Tray"] scratchpad
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
-gaps inner 5
-gaps outer 3
+gaps inner 0
+gaps outer 0
 
 ### Output configuration
 #
@@ -130,8 +128,8 @@ bindsym $mod+f1 exec ~/.config/sway/lockman.sh
 bindsym $mod+f12 exec ~/.config/sway/lockman.sh
 
 # Screenshot with grim and swappy
-bindsym print exec grim -g "$(slurp)" - | swappy -f -
-bindsym Shift+print exec grim - | swappy -f -
+bindsym $mod+P exec grim -g "$(slurp)" - | swappy -f -
+bindsym $mod+Shift+P exec grim - | swappy -f -
 
 ### Input configuration
 #
@@ -155,14 +153,11 @@ bindsym Shift+print exec grim - | swappy -f -
     bindsym $mod+return exec $term
 
     # Kill focused window
-    bindsym $mod+X kill
+    bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+Space exec $menu
+    bindsym $mod+d exec $menu
 
-	# Launch Dolphin
-	# bindsym $mod+d exec dolphin
-	
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -228,10 +223,8 @@ bindsym Shift+print exec grim - | swappy -f -
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
     # Switch to next/previous workspace
-    bindsym ctrl+Alt+Right workspace next_on_output
-    bindsym ctrl+Alt+$right workspace next_on_output
-    bindsym ctrl+Alt+Left workspace prev_on_output
-    bindsym ctrl+Alt+$left workspace prev_on_output
+    bindsym ctrl+Shift+less move workspace to output left
+    bindsym ctrl+Shift+greater move workspace to output right
 #
 # Layout stuff:
 #
@@ -242,9 +235,8 @@ bindsym Shift+print exec grim - | swappy -f -
     bindsym $mod+c splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+Tab layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+t layout tabbed
+    bindsym $mod+n layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen

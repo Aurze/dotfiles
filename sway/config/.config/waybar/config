@@ -1,28 +1,15 @@
 {
-	// "layer": "top",				// Waybar at top layer
-	// "position": "bottom",	// Waybar position (top|bottom|left|right)
-	// "height": 38,					// Waybar height (to be removed for auto height)
-	// "width": 1200,					// Waybar width
 	"margin": 0,
 		// Choose the order of the modules
-		"modules-left": ["custom/name","clock", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll","sway/window",],
-		"modules-center": ["sway/workspaces"],
+		"modules-left": ["custom/name", "sway/workspaces", "sway/window",],
+		"modules-center": ["mpd"],
 		// "idle_inhibitor",
-		"modules-right": [ "idle_inhibitor", "pulseaudio","disk", "network", "memory", "cpu", "temperature", "custom/pacman", "backlight", "tray", "custom/power",],
+		"modules-right": [ "idle_inhibitor", "pulseaudio","disk", "network", "memory", "cpu", "temperature", "custom/pacman", "backlight", "tray", "clock", "custom/power",],
 		// Modules configuration
 		"sway/workspaces": {
 			"disable-scroll": false,
-			"all-outputs": true,
+			"all-outputs": false,
 			"format": "{icon}",
-			"persistent_workspaces": {
-				"1": [],
-				"2": [],
-				"3": [],
-				"4": [],
-				// "5": [],
-				//"6": [],
-				// "7": []
-			},
 			"format-icons": {
 				"1": "",
 				"2": "",
@@ -49,12 +36,11 @@
 		},
 		"mpd": {
 			"format": "♪ {}",
-			//"max-length": 15,
+			"max-length": 15,
 			"interval": 10,
 			"exec": "mpc current",
 			"exec-if": "pgrep mpd",
 			"on-click": "mpc toggle",
-			"on-click-right": "sonata"
 		},
 		"custom/waybar-media": {
 			"return-type": "json",
@@ -94,7 +80,7 @@
 		"clock": {
 			// "timezone": "America/New_York",
 			"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-			"format-alt": "{:%Y-%m-%d}"
+			"format": "{:%Y-%m-%d %H:%M}"
 		},
 		"cpu": {
 			"format": "{usage}% ",

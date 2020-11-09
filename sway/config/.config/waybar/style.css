@@ -1,38 +1,38 @@
 * {
 	/* margin: ; */
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
-    /* font-family: San Francisco Text, MesloLGS NF, Arial, sans-serif; */
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	/* `otf-font-awesome` is required to be installed for icons */
+	/* font-family: San Francisco Text, MesloLGS NF, Arial, sans-serif; */
   /* font-family: JetBrains Mono, Ubuntu Mono; */
    font-size: 13px;
    /* font-family: Ubuntu ,Arial, Helvetica, sans-serif; */
-    font-weight: 500;
+	font-weight: 500;
 }
 
 window#waybar {
-    background-color: rgba(59,66,82,0.9);
-    /* background-color: #3b4252; */
-    /* background-color: transparent; */
-    /* border-radius: 5px; */
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
-    box-shadow: 0px 0px 8px 10px #0d0d0d;
+	background-color: rgba(59,66,82,0.9);
+	/* background-color: #3b4252; */
+	/* background-color: transparent; */
+	/* border-radius: 5px; */
+	color: #ffffff;
+	transition-property: background-color;
+	transition-duration: .5s;
+	box-shadow: 0px 0px 8px 10px #0d0d0d;
 }transition
 
 window#waybar.hidden {
-    opacity: 0.2;
+	opacity: 0.2;
 }
 
 #workspaces {
-    background-color: transparent;
-    /* border-radius: 5px; */
-    padding: 4;
-    font-size: 15px;
-    margin: 0 0 0 10;
-/*     padding-left: 5; */
+	background-color: transparent;
+	/* border-radius: 5px; */
+	padding: 4;
+	font-size: 15px;
+	margin: 0 0 0 10;
+/*	 padding-left: 5; */
 }
 
 #workspaces button {
@@ -41,40 +41,40 @@ window#waybar.hidden {
 	padding: 0 5 0 5;
 	border-bottom: 2px solid transparent;
 	border-top: 3px solid transparent;
-    margin: 0 8 0 0;
-    background-color: transparent;
-    color: #ffffff;
+	margin: 0 8 0 0;
+	background-color: transparent;
+	color: #ffffff;
 }
 
 #window {
 	padding: 15px;
-    background-color: transparent;
+	background-color: transparent;
 	padding: 0 10 0 10;
-    margin: 0;
-    /* border-radius: 0 5 5 0; */
+	margin: 0;
+	/* border-radius: 0 5 5 0; */
 	/* border-bottom: 3px solid #ebcb8b; */
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    /* background: rgba(0, 0, 0, 0.2); */
-    box-shadow: inherit;
-    color: #5e81ac;
-    border-bottom: 2px solid #5e81ac;
+	/* background: rgba(0, 0, 0, 0.2); */
+	box-shadow: inherit;
+	color: #5e81ac;
+	border-bottom: 2px solid #5e81ac;
 }
 
 #workspaces button.focused {
-    color: #81a1c1;
-    border-bottom: 2px solid  #81a1c1;
+	color: #81a1c1;
+	border-bottom: 2px solid  #81a1c1;
 }
 
 #workspaces button.urgent {
-    color: #eb4d4b;
+	color: #eb4d4b;
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+	background-color: #64727D;
+	border-bottom: 3px solid #ffffff;
 }
 
 /* #workspaces, */
@@ -113,9 +113,9 @@ window#waybar.hidden {
 #taskbar
 #taskbar button.fullscreen
 #mpd {
-    padding: 0 10px;
-    margin: 0 4px;
-    color: #ffffff;
+	padding: 0 10px;
+	margin: 0 4px;
+	color: #ffffff;
 }
 
 /* WAYBAR-MEDIA */
@@ -158,7 +158,7 @@ window#waybar.hidden {
 /* TASKBAR */
 
 #taskbar {
-    background-color:#4b5162;
+	background-color:#4b5162;
 	margin: 0;
 	padding: 0;
 }
@@ -169,16 +169,16 @@ window#waybar.hidden {
 }
 
 #taskbar button.active {
-    background-color:  #5e81ac;
+	background-color:  #5e81ac;
 }
 
 #taskbar button.minimized {
-    background-color: #7c818c;
+	background-color: #7c818c;
 }
 
 #taskbar button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inherit;
+	background: rgba(0, 0, 0, 0.2);
+	box-shadow: inherit;
 }
 
 /* BROWSER BOOKMARKS */
@@ -211,7 +211,7 @@ window#waybar.hidden {
 	background-color: transparent;
 	padding: 0 12 0 12;
 	font-size: 13px;
-    margin: 0;
+	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
@@ -227,7 +227,7 @@ window#waybar.hidden {
 	background-color: transparent;
 	font-size: 13px;
 	padding: 0 2 0 12;
-    margin: 0;
+	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
@@ -236,16 +236,16 @@ window#waybar.hidden {
 #custom-name {
   font-family: Ubuntu;
   font-size: 13px;
-    font-weight: normal;
-    background-color: transparent;
+	font-weight: normal;
+	background-color: transparent;
 	padding: 0px 10px 0px 10px;
-    /* border-radius: 5 0 0 5; */
+	/* border-radius: 5 0 0 5; */
 	margin-left: 0;
 	border-bottom: 3px solid #81a1c1;
 }
 
 #clock {
-    background-color: transparent;
+	background-color: transparent;
 	padding: 0px 8px 0px 8px;
 /* 	margin: 0; */
 	border-bottom: 3px solid #bf616a;
@@ -259,7 +259,7 @@ window#waybar.hidden {
 }
 
 #cpu {
-    background-color:  transparent;
+	background-color:  transparent;
 	padding: 0px 8px 0px 8px;
 /* 	margin: 0; */
 	border-bottom: 3px solid #698A86;
@@ -280,7 +280,7 @@ window#waybar.hidden {
 }
 
 #network {
-    background-color: transparent;
+	background-color: transparent;
 	padding: 0px 8px 0px 8px;
 	/* margin: 0; */	
 	border-bottom: 3px solid #d08770;
@@ -292,58 +292,58 @@ window#waybar.hidden {
 }
 
 #pulseaudio {
-    background-color:  transparent;
+	background-color:  transparent;
 	padding: 0px 10px 0px 10px;
 	/* margin: 0; */
-    margin: 0 4 0 4;
+	margin: 0 4 0 4;
 	border-bottom: 3px solid #D3B67D;	
 	/* border-radius: 5 0 0 5; */
 }
 
 #custom-weather {
-    background-color: transparent ;
+	background-color: transparent ;
 	padding: 0 8 0 8;
 /* 	marginj: 0; */
 	border-bottom: 3px solid #7b9b96;
 }
 
 #pulseaudio.muted {
-    background-color: #b1b190;
-    color: #2a5c45;
+	background-color: #b1b190;
+	color: #2a5c45;
 }
 
 #custom-media {
-    background-color: #66cc99;
+	background-color: #66cc99;
 	padding: 0px 8px 0px 8px;
 	/* margin: 0; */
 	
 }
 
 #custom-media.custom-spotify {
-    background-color: #66cc99;
+	background-color: #66cc99;
 	padding: 0px 8px 0px 8px;
 }
 
 #custom-media.custom-vlc {
-    background-color: #ffa000;
+	background-color: #ffa000;
 	padding: 0px 8px 0px 8px;
-	border-radius: 5px;    
+	border-radius: 5px;	
 }
 
 
 #temperature {
-    background-color: transparent;
+	background-color: transparent;
 	/* margin: 0; */
 	border-bottom: 3px solid #b48ead;
 	
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+	background-color: #eb4d4b;
 }
 
 #tray {
-    background-color: transparent;
+	background-color: transparent;
 	padding: 0px 8px 0px 8px;
 	/* margin: 0; */
 	border-bottom: 3px solid #90718a;
@@ -357,44 +357,44 @@ window#waybar.hidden {
 }
 
 #battery.charging {
-    color: #ffffff;
+	color: #ffffff;
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+	to {
+		background-color: #ffffff;
+		color: #000000;
+	}
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	background-color: #f53c3c;
+	color: #ffffff;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 label:focus {
-    background-color: #000000;
+	background-color: #000000;
 }
 
 #disk {
-    background-color: transparent;
+	background-color: transparent;
 /* 	padding: 0px 8px 0px 8px; */
 	margin: 0 4 0 4;
 	border-bottom: 3px solid #DB8E9D;
 }
 
 #idle_inhibitor {
-    background-color: transparent;
+	background-color: transparent;
 /* 	padding: 0px 12px 0px 12px; */
 	font-size: 20px;
   color: #d8dee9;
 	/* margin: 0; */
-    margin: 0 4 0 4;
+	margin: 0 4 0 4;
 	border-bottom: 3px solid #7b9b96;
 }
 
@@ -406,7 +406,7 @@ label:focus {
 #custom-power {
   /* background-color: transparent; */
 	background-color: #829870;
-    font-weight: normal;
+	font-weight: normal;
 	font-size: 16px;
 	padding: 0px 13px 0px 13px;
 	/* border-radius: 0 5 5 0; */
@@ -415,21 +415,21 @@ label:focus {
 }
 
 #mpd {
-    background-color: #66cc99;
+	background-color: #66cc99;
 	padding: 3px 8px 3px 8px;
 	/* margin: 0; */
 	border-bottom: 3px solid #708c86;
 }
 
 #mpd.disconnected {
-    background-color: #f53c3c;
+	background-color: #f53c3c;
 }
 
 #mpd.stopped {
-    background-color: #90b1b1;
+	background-color: #90b1b1;
 }
 
 #mpd.paused {
-    background-color: #51a37a;
+	background-color: #51a37a;
 }
 
