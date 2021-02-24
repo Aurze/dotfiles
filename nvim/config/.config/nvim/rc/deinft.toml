@@ -151,3 +151,14 @@ setlocal iskeyword+=?
 setlocal omnifunc=
 setlocal shiftwidth=2 softtabstop=2 tabstop=2
 '''
+
+openscad = '''
+" Indent settings.
+setlocal foldmethod=indent
+setlocal softtabstop=2
+setlocal shiftwidth=2
+setlocal textwidth=80
+setlocal smarttab
+setlocal noexpandtab
+setlocal smartindent
+'''

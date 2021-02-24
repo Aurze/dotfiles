@@ -37,8 +37,8 @@ repo = 'vim-jp/vimdoc-ja'
 [[plugins]]
 repo = 'thinca/vim-themis'
 
-[[plugins]]
-repo = 'Shirk/vim-gas'
+#[[plugins]]
+#repo = 'Shirk/vim-gas'
 
 [[plugins]]
 repo = 'chrisbra/vim-zsh'
@@ -80,3 +80,6 @@ repo = 'dylanaraps/wal.vim'
 hook_source = '''
   colorscheme wal
 '''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'

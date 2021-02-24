@@ -524,3 +524,18 @@ source ~/.config/nvim/rc/plugins/languageclient.rc.vim
 [[plugins]]
 repo = 'habamax/vim-asciidoctor'
 on_ft = 'adoc'
+
+[[plugins]]
+repo = 'sirtaj/vim-openscad'
+on_ft = 'scad'
+
+[[plugins]]
+repo = 'mfussenegger/nvim-dap'
+on_ft = 'as'
+hook_sorce = '''
+nnoremap <silent> <C-d> :<C-u>lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <C-c> :<C-u>lua require'dap'.continue()<CR>
+nnoremap <silent> <C-s> :<C-u>lua require'dap'.step_over()<CR>
+nnoremap <silent> <C-i> :<C-u>lua require'dap'.step_into()<CR>
+nnoremap <silent> <C-b> :<C-u>lua require'dap'.repl.open()<CR>
+'''
