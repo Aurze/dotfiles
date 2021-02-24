@@ -1,3 +1,5 @@
+source ~/.bashrc
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"

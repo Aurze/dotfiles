@@ -1,1 +1,1 @@
-echo "stow ruby zsh zsh-completions"
+echo "stow ruby zsh zsh-completions bat"
